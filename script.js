@@ -8,7 +8,7 @@ var Airtable = require("airtable");
 // We needed to put in the right apiKey and
 // base ID here!
 var base = new Airtable({ apiKey: "keyyZwdvTUhLlyjUs" }).base(
-  "appBEvYxT3jXPCsCq"
+  "appTzsAz8wGQmFmkP"
 );
 
 // Get the "songs" table from the base,
@@ -16,7 +16,7 @@ var base = new Airtable({ apiKey: "keyyZwdvTUhLlyjUs" }).base(
 // and specify the callback functions that will receive each page of data
 base("songs").select({
   // TODO: add your view in here
-  view: "grids"
+  view: "Grid 2"
 }).eachPage(gotPageOfData, gotAllData);
 
 // an empty array to hold our songs data
@@ -103,7 +103,6 @@ function showData() {
       genreElement.classList.add("genreTag");
       genreElement.innerText = genre;
       songContainer.appendChild(genreElement);
-      songContainer.appendChild(genreElement);
       console.log(genre)
       songContainer.classList.add(genre);
       // TODO: Add this genre name as a class to the songContainer
@@ -123,7 +122,6 @@ function showData() {
       }
      });
 
-
       var filterPop = document.querySelector('#pop');
 
      filterPop.addEventListener("click", function() {
@@ -133,7 +131,6 @@ function showData() {
         songContainer.style.display = "none"
       }
      });
-
 
        var filterRb = document.querySelector('#rb');
 
@@ -145,7 +142,6 @@ function showData() {
       }
      }); 
 
-
       var filterDance = document.querySelector('#dance');
 
      filterDance.addEventListener("click", function() {
@@ -156,7 +152,6 @@ function showData() {
       }
      });
 
-      
       var filterSoul = document.querySelector('#soul');
 
      filterSoul.addEventListener("click", function() {
