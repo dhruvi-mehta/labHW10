@@ -20,7 +20,7 @@ base("songs").select({
 }).eachPage(gotPageOfData, gotAllData);
 
 // an empty array to hold our songs data
-var songs = [];
+const songs = [];
 
 // callback function that receives each page of data (considered here as records) and adds them to our list of songs
 function gotPageOfData(records, fetchNextPage) {
@@ -36,13 +36,13 @@ function gotPageOfData(records, fetchNextPage) {
 function gotAllData(err) {
   console.log("gotAllData()");
 
+
   // report an error, you'd want to do something better than this in production
   if (err) {
     console.log("error loading data");
     console.error(err);
     return;
   }
-
   // call function to show the data
   showData();
 }
@@ -56,12 +56,11 @@ function showData() {
 
   // loop through all the people listed in the Airtable data.
   // Inside is the code we are applying for EACH song in the list of songs.
-  songs.forEach((song) => {
+   songs.forEach((song) => {
 
     // Print out what a single songs's data feidls looks like
     console.log("SHOWING THE SONG")
     console.log(song.fields);
-
 
     /** CREATE CONTAINER */
     const songContainer = document.createElement("div");
@@ -72,7 +71,6 @@ function showData() {
     *******************/
 
     const titleElement = document.createElement("h2");
-    titleElement.classList.add("title");
     titleElement.innerText = song.fields.title;
     songContainer.appendChild(titleElement);
     
@@ -81,7 +79,6 @@ function showData() {
     *******************/
 
     const artistElement = document.createElement("p");
-    artistElement.classList.add("artist");
     artistElement.innerText = song.fields.artist;
     songContainer.appendChild(artistElement);
 
@@ -90,7 +87,6 @@ function showData() {
     *******************/
 
     let ratingElement = document.createElement("p");
-    ratingElement.classList.add("rating");
     ratingElement.innerText = "Rating: "+ song.fields.rating;
     
     songContainer.appendChild(ratingElement);
@@ -100,23 +96,24 @@ function showData() {
     ADD GENRES
     *******************/
 
-    let genresList = song.fields.genres;
+     let genresList = song.fields.genres;
 
     genresList.forEach(function(genre){
       const genreElement = document.createElement("span");
       genreElement.classList.add("genreTag");
       genreElement.innerText = genre;
       songContainer.appendChild(genreElement);
-
+      songContainer.appendChild(genreElement);
+      console.log(genre)
+      songContainer.classList.add(genre);
       // TODO: Add this genre name as a class to the songContainer
-        songContainer.classList.add(genre);
       
       });
     /***********
      TODO: CREATE FILTER-BY-GENRE FUNCTIONALITY
      **********/
 
-      var filterIndie = document.querySelector('#indie')
+      var filterIndie = document.querySelector('#indie');
 
      filterIndie.addEventListener("click", function() {
       if (songContainer.classList.contains("indie")) {
@@ -124,7 +121,7 @@ function showData() {
       } else {
         songContainer.style.display = "none";
       }
-     })
+     });
 
 
       var filterPop = document.querySelector('#pop');
@@ -135,7 +132,7 @@ function showData() {
       } else {
         songContainer.style.display = "none"
       }
-     }) 
+     });
 
 
        var filterRb = document.querySelector('#rb');
@@ -146,7 +143,7 @@ function showData() {
       } else {
         songContainer.style.display = "none"
       }
-     }) 
+     }); 
 
 
       var filterDance = document.querySelector('#dance');
@@ -157,7 +154,7 @@ function showData() {
       } else {
         songContainer.style.display = "none"
       }
-     }) 
+     });
 
       
       var filterSoul = document.querySelector('#soul');
@@ -168,7 +165,7 @@ function showData() {
       } else {
         songContainer.style.display = "none"
       }
-     }) 
+     });
     songsContainer.appendChild(songContainer);
 
   });
