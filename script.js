@@ -104,9 +104,9 @@ function showData() {
       genreElement.innerText = genre;
       songContainer.appendChild(genreElement);
 
+      // songContainer.classList.add(genre);
   
       // TODO: Add this genre name as a class to the songContainer
-      // songContainer.classList.add(genre);
 
       })
     /***********
@@ -162,8 +162,6 @@ function showData() {
         songContainer.style.display = "none"
       }
      });
-
-
 
     songsContainer.appendChild(songContainer);
 
