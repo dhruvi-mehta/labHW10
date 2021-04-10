@@ -104,7 +104,7 @@ function showData() {
       genreElement.innerText = genre;
       songContainer.appendChild(genreElement);
 
-      // songContainer.classList.add(genre);
+      songContainer.classList.add(genre);
   
       // TODO: Add this genre name as a class to the songContainer
 
@@ -132,16 +132,7 @@ function showData() {
         songContainer.style.display = "none"
       }
      });
-
-       var filterRb = document.querySelector('#rb');
-
-     filterRb.addEventListener("click", function() {
-      if (songContainer.classList.contains("R&B")) {
-        songContainer.style.display = "block";
-      } else {
-        songContainer.style.display = "none"
-      }
-     }); 
+     
 
       var filterDance = document.querySelector('#dance');
 
