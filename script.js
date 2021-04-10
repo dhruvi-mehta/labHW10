@@ -107,6 +107,7 @@ function showData() {
       // songContainer.classList.add(genre);
       // TODO: Add this genre name as a class to the songContainer
       
+      
       });
     /***********
      TODO: CREATE FILTER-BY-GENRE FUNCTIONALITY
@@ -161,7 +162,7 @@ function showData() {
         songContainer.style.display = "none"
       }
      });
-     
+
     songsContainer.appendChild(songContainer);
 
   });
