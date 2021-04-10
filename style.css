@@ -12,13 +12,14 @@ h1 {
 
 .genreTag {
   padding:4px 8px;
-  border: 1px solid black;
+  border: 1px solid white;
   margin: 4px;
+  color:white;
 }
 
 .songContainer{
   padding:16px 24px;
-  border:1px solid black;
+  border:1px solid white;
   margin:8px;
 }
 
@@ -26,14 +27,14 @@ h1 {
     text-align: center;
     font-size: 30px;
     font-family: Montserrat, sans-serif;
-    color: white;
+    color: #4E3145;
     line-height: 30px;
 }
 
 button {
 	 font-family: Montserrat, sans-serif;
 	 font-size: 30px;
-	 color:white;
+	 color:#4E3145;
 	 border: none;
 	 background-color:#00A4B4;
 
@@ -44,5 +45,16 @@ h2 {
     font-size: 30px;
     font-family:Montserrat, sans-serif;
     color: white;
-    line-height: 30px;
+}
+
+p {
+	text-align: left;
+	font-size: 30px;
+	font-family:Montserrat, sans-serif;
+	color: white;
+}
+
+div {
+
+
 }
